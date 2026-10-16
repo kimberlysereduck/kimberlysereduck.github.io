@@ -2,5 +2,7 @@
   "name": "DevSpectrum - Engineer Portfolio",
   "description": "High-contrast dark-themed software engineer portfolio featuring rainbow gradient text accents, interactive project showcases, terminal CLI, and contact suite.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

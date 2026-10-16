@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 import { Send, CheckCircle2, Github, Copy, Check, Download, Mail, Linkedin, ArrowUpRight, MapPin } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -143,6 +144,7 @@ Location: Carlsbad, NM
                   <div className="text-xs font-mono text-slate-200 truncate">{PERSONAL_INFO.email}</div>
                 </div>
                 <button
+                  type="button"
                   onClick={handleCopyEmail}
                   className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-white flex items-center gap-1.5 transition-colors shrink-0"
                   aria-label="Copy email address"
@@ -225,6 +227,7 @@ Location: Carlsbad, NM
 
               {/* Download Resume Button */}
               <button
+                type="button"
                 onClick={handleDownloadResume}
                 disabled={downloadingResume}
                 className="w-full py-2.5 px-4 rounded-xl font-mono text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
@@ -259,6 +262,7 @@ Location: Carlsbad, NM
                     Thank you for reaching out to Kimberly Sereduck. I will review your transmission and respond promptly.
                   </p>
                   <button
+                    type="button"
                     onClick={() => setIsSubmitted(false)}
                     className="mt-4 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-white transition-colors"
                   >
