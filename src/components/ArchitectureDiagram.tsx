@@ -5,6 +5,11 @@ interface ArchitectureDiagramProps {
   className?: string;
 }
 
+/**
+ * Renders the diagram associated with a project architecture.
+ *
+ * @public
+ */
 export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, className = '' }) => {
   return (
     <div className={`relative w-full h-48 rounded-xl overflow-hidden bg-[#0c0f17] dark:bg-[#080a10] border border-slate-800/80 flex items-center justify-center p-4 select-none ${className}`}>

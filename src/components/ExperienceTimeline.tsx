@@ -1,6 +1,11 @@
 import React from 'react';
 import { EXPERIENCES } from '../data/portfolioData';
 
+/**
+ * Renders professional experience entries as a timeline.
+ *
+ * @public
+ */
 export const ExperienceTimeline: React.FC = () => {
   return (
     <section id="experience" className="py-20 border-t border-slate-800/80">
@@ -72,8 +77,8 @@ export const ExperienceTimeline: React.FC = () => {
                   Key Accomplishments
                 </div>
                 <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
-                  {exp.highlights.map((h, i) => (
-                    <li key={i} className="flex items-start gap-2.5">
+                  {exp.highlights.map((h) => (
+                    <li key={h} className="flex items-start gap-2.5">
                       <span className="text-pink-500 font-mono mt-0.5">›</span>
                       <span className="leading-relaxed">{h}</span>
                     </li>

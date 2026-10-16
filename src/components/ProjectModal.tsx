@@ -8,6 +8,11 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
+/**
+ * Displays the selected project details in a dismissible modal.
+ *
+ * @public
+ */
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   const [copiedCode, setCopiedCode] = React.useState(false);
 
@@ -151,7 +156,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </h3>
             <ul className="space-y-1.5 text-xs text-slate-300 font-sans">
               {project.architectureDetails.keyComponents.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-2">
+                <li key={item} className="flex items-start gap-2">
                   <span className="text-cyan-400 font-mono">0{idx + 1}.</span>
                   <span>{item}</span>
                 </li>

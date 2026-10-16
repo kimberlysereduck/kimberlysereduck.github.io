@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { Send, CheckCircle2, Github, Copy, Check, Download, Mail, Linkedin, ArrowUpRight, MapPin } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
+/**
+ * Renders contact information and direct communication links.
+ *
+ * @public
+ */
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',

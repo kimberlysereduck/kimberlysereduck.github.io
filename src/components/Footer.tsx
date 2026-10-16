@@ -2,6 +2,11 @@ import React from 'react';
 import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
+/**
+ * Renders the portfolio footer and its profile links.
+ *
+ * @public
+ */
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

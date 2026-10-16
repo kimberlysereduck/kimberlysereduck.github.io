@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
 
+/**
+ * Renders the grouped technical skills section.
+ *
+ * @public
+ */
 export const TechnicalStack: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<number>(0);
 

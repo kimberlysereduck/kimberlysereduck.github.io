@@ -8,6 +8,11 @@ import { TechnicalStack } from './components/TechnicalStack';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 
+/**
+ * Renders the portfolio shell and coordinates the site-wide theme.
+ *
+ * @public
+ */
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {

@@ -1,5 +1,15 @@
+/**
+ * Categories available for classifying portfolio projects.
+ *
+ * @public
+ */
 export type ProjectCategory = 'all' | 'systems' | 'tooling' | 'fullstack' | 'opensource';
 
+/**
+ * A portfolio project and its supporting technical details.
+ *
+ * @public
+ */
 export interface Project {
   id: string;
   title: string;
@@ -31,6 +41,11 @@ export interface Project {
   architectureDiagramSvg: 'stream' | 'mesh' | 'compiler' | 'cache' | 'container' | 'socket';
 }
 
+/**
+ * A professional experience entry displayed in the timeline.
+ *
+ * @public
+ */
 export interface Experience {
   id: string;
   role: string;
@@ -44,6 +59,11 @@ export interface Experience {
   technologies: string[];
 }
 
+/**
+ * A group of related technical skills.
+ *
+ * @public
+ */
 export interface SkillCategory {
   category: string;
   description: string;
@@ -55,6 +75,11 @@ export interface SkillCategory {
   }[];
 }
 
+/**
+ * A command and its rendered output in the portfolio terminal.
+ *
+ * @public
+ */
 export interface TerminalCommand {
   command: string;
   output: string | React.ReactNode;
