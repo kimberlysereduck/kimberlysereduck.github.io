@@ -7,6 +7,11 @@ interface NavbarProps {
   onToggleTheme: () => void;
 }
 
+/**
+ * Renders primary navigation and the site theme toggle.
+ *
+ * @public
+ */
 export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 

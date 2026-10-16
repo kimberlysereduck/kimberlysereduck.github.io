@@ -5,6 +5,11 @@ import { PROJECTS } from '../data/portfolioData';
 import { ArchitectureDiagram } from './ArchitectureDiagram';
 import { ProjectModal } from './ProjectModal';
 
+/**
+ * Renders the project gallery and project-detail interactions.
+ *
+ * @public
+ */
 export const ProjectShowcase: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -29,7 +34,7 @@ export const ProjectShowcase: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <div className="flex items-center gap-2 font-mono text-xs text-slate-400 mb-2">
-              <span className="text-pink-500">//</span>
+              <span className="text-pink-500">{'//'}</span>
               <span>SELECTED ARCHITECTURE &amp; CODEWORKS</span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-white">

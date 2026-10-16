@@ -1,5 +1,10 @@
 import { Project, Experience, SkillCategory } from '../types';
 
+/**
+ * Personal details and contact links used throughout the portfolio.
+ *
+ * @public
+ */
 export const PERSONAL_INFO = {
   name: 'Kimberly Sereduck',
   handle: 'kimberlysereduck',
@@ -21,6 +26,11 @@ export const PERSONAL_INFO = {
   ],
 };
 
+/**
+ * Projects featured in the portfolio showcase.
+ *
+ * @public
+ */
 export const PROJECTS: Project[] = [
   {
     id: 'pytest-axe-automation',
@@ -269,6 +279,11 @@ def test_page_accessibility_conformance(selenium, base_url):
   },
 ];
 
+/**
+ * Professional experience entries shown in the experience timeline.
+ *
+ * @public
+ */
 export const EXPERIENCES: Experience[] = [
   {
     id: 'software-engineer-carlsbad',
@@ -332,6 +347,11 @@ export const EXPERIENCES: Experience[] = [
   },
 ];
 
+/**
+ * Skill groups and proficiency details shown in the technical stack section.
+ *
+ * @public
+ */
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: 'Languages & Core Web',

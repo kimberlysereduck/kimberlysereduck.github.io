@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { ArrowDown, Github, Terminal, Play, CheckCircle2, Copy, Check } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
+/**
+ * Renders the introductory hero and interactive code workbench.
+ *
+ * @public
+ */
 export const Hero: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'a11y' | 'perf' | 'fullstack'>('a11y');
   const [isRunningTest, setIsRunningTest] = useState(false);

@@ -14,6 +14,11 @@ interface CommandLog {
   output: React.ReactNode;
 }
 
+/**
+ * Renders the interactive portfolio command-line interface.
+ *
+ * @public
+ */
 export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleTheme, isDarkMode }) => {
   const [input, setInput] = useState('');
   const [historyIndex, setHistoryIndex] = useState<number>(-1);
@@ -48,12 +53,10 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleTheme, isDarkM
   const terminalEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const scrollToBottom = () => {
-    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   useEffect(() => {
-    scrollToBottom();
+    if (logs.length > 0) {
+      terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, [logs]);
 
   const executeCommand = (rawCmd: string) => {
