@@ -1,4 +1,4 @@
-import { Project, Experience, SkillCategory } from '../types';
+import type { Project, Experience, SkillCategory } from '../types';
 
 /**
  * Personal details and contact links used throughout the portfolio.
