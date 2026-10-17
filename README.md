@@ -33,8 +33,8 @@ Vite serves the site at <http://localhost:3000>.
 
 The repository is pre-configured for GitHub Pages:
 - **Relative base paths (`base: './'`)** in `vite.config.ts` so scripts and styles load without 404s.
-- **Automated deployment** via `.github/workflows/deploy.yml` on every push to `main` (Settings > Pages > Source: **GitHub Actions**).
-- **Manual 1-command deployment** via `npm run deploy` using the `gh-pages` branch (Settings > Pages > Source: **Deploy from a branch** > `gh-pages`).
+- **Automated deployment** via `.github/workflows/deploy.yml` on every push to `main`. The workflow builds the site and publishes it through GitHub Actions (Settings > Pages > Source: **GitHub Actions**).
+- **Manual 1-command deployment** is also available via `npm run deploy`, which pushes the built site to the `gh-pages` branch. Use this alternative only when Pages is configured to deploy from that branch; do not run both deployment methods for the same Pages site.
 
 ## Project layout
 
