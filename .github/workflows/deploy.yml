@@ -51,11 +51,14 @@ jobs:
 
       - name: Run linter
         run: npm run lint
+
   build-and-deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }} 
+    needs: [test, lint]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
