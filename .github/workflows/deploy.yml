@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: ["main"]
+  pull_request:
+    branches: ["main", gh-pages]
   workflow_dispatch:
 
 # Grant GITHUB_TOKEN permissions required for Pages deployment
