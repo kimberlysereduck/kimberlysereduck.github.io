@@ -216,67 +216,7 @@ def test_page_accessibility_conformance(selenium, base_url):
     },
     githubUrl: 'https://github.com/kimberlythegeek/project-2-would-you-rather',
     architectureDiagramSvg: 'socket',
-  },
-  {
-    id: 'fullstack-workflow-platform',
-    title: 'Cloud Test Automation Orchestrator',
-    tagline: 'End-to-end containerized test pipeline with parallelized regression gates',
-    category: 'tooling',
-    featured: false,
-    stars: 78,
-    year: 'Cloud & DevOps',
-    role: 'Software Engineer',
-    primaryMetric: {
-      label: 'Build Pipeline Speedup',
-      value: '82% Faster CI',
-    },
-    techStack: ['Docker', 'Python', 'TypeScript', 'GitHub Actions', 'Linux'],
-    description: 'Modern developer workflow orchestrator designed to run automated functional tests, linting, and accessibility evaluations concurrently in ephemeral Linux containers.',
-    architectureDetails: {
-      challenge: 'Linear test execution slowed down pull request turnaround times to over 30 minutes, blocking rapid continuous delivery.',
-      solution: 'Containerized test runners with smart artifact caching and parallel test matrix splits across headless browser instances.',
-      benchmarkResults: [
-        { metric: 'CI Runtime', before: '32 minutes', after: '5.8 minutes' },
-        { metric: 'Container Spin-up', before: '3.5 minutes', after: '18 seconds' },
-      ],
-      keyComponents: [
-        'Multi-stage Docker containerization for minimal build artifacts',
-        'Parallelized test matrix running accessibility and unit tests simultaneously',
-      ],
-    },
-    githubUrl: 'https://github.com/kimberlysereduck',
-    architectureDiagramSvg: 'container',
-  },
-  {
-    id: 'a11y-design-system',
-    title: 'Accessible UI Component Engine',
-    tagline: 'High-contrast, keyboard-navigable component library meeting WCAG 2.1 AA',
-    category: 'fullstack',
-    featured: false,
-    stars: 62,
-    year: 'Design & Frontend',
-    role: 'Frontend Engineer',
-    primaryMetric: {
-      label: 'Audit Score',
-      value: '100% WCAG Passed',
-    },
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Radix Primitives', 'axe-core'],
-    description: 'Component architecture system engineered from first principles with full ARIA landmarks, focus-visible rings, screen reader announcements, and dark/light high-contrast themes.',
-    architectureDetails: {
-      challenge: 'Ensuring interactive modals, dropdowns, and form inputs maintain strict keyboard focus traps and color contrast across both dark and light modes.',
-      solution: 'Built composable primitives with Radix accessibility foundations, paired with automated axe-core regression checks run on every component render.',
-      benchmarkResults: [
-        { metric: 'Contrast Ratio', before: '3.8:1 borderline', after: '7.2:1 AAA certified' },
-        { metric: 'Keyboard Nav Usability', before: 'Focus traps broken', after: '100% compliant' },
-      ],
-      keyComponents: [
-        'Accessible modal focus-trapping with automatic ESC key handling',
-        'High-contrast color tokens tested for color-blind legibility',
-      ],
-    },
-    githubUrl: 'https://github.com/kimberlysereduck',
-    architectureDiagramSvg: 'cache',
-  },
+  }
 ];
 
 /**
@@ -288,9 +228,9 @@ export const EXPERIENCES: Experience[] = [
   {
     id: 'software-engineer-carlsbad',
     role: 'Software Engineer',
-    company: 'Full-Stack & Cloud Systems',
+    company: 'Independent Study & Professional Development',
     location: 'Carlsbad, NM',
-    period: '2021 — Present',
+    period: 'Jan 2026 — Present',
     type: 'Full-Time',
     summary: 'Building high-reliability web applications, automated testing harnesses, and accessible user interfaces. Leading frontend architecture, API integration, and test automation strategies.',
     highlights: [
@@ -307,10 +247,10 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     id: 'mozilla-contributor',
-    role: 'Open Source Contributor',
+    role: 'Senior Software Engineer',
     company: 'Mozilla & Open Web Infrastructure',
     location: 'Remote',
-    period: '2017 — 2021',
+    period: 'Nov 2017 — Jun 2023',
     type: 'Open Source',
     summary: 'Contributed to Mozilla developer infrastructure, Firefox performance automation dashboards, and accessibility test suites (pytest-axe, perf-automation).',
     highlights: [
@@ -329,7 +269,7 @@ export const EXPERIENCES: Experience[] = [
     id: 'frontend-fullstack-engineer',
     role: 'Web Application Developer',
     company: 'Independent & Project Engineering',
-    location: 'Carlsbad, NM',
+    location: 'Durango, CO',
     period: '2016 — 2017',
     type: 'Contract & Projects',
     summary: 'Engineered responsive web applications, interactive state management systems, and automated test runners.',
