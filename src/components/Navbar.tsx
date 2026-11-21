@@ -25,11 +25,11 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
 
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-[#090b10]/85 dark:bg-[#090b10]/85 border-b border-slate-800/80 transition-colors duration-200">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-8">
         {/* Zone 1: Brand Wordmark (Single text element in display/mono face) */}
         <a
           href="#"
-          className="font-mono text-base font-semibold tracking-tight text-slate-100 hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5"
+          className="font-mono text-xs sm:text-base font-semibold tracking-tight text-slate-100 hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5"
           aria-label="Kimberly Sereduck Portfolio Home"
         >
           <span className="text-pink-500 font-bold">&gt;</span>
@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
         </nav>
 
         {/* Zone 3: 1 primary action area (GitHub link & Dark Mode toggle) */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-1 sm:gap-3 shrink-0">
           {/* Dark / Light Mode Toggle */}
           <button
             onClick={onToggleTheme}
@@ -93,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
           {/* Primary Action Button */}
           <a
             href="#contact"
-            className="px-3.5 py-1.5 text-xs font-medium rounded-lg text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors whitespace-nowrap shrink-0"
+            className="hidden sm:inline-flex px-3.5 py-1.5 text-xs font-medium rounded-lg text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors whitespace-nowrap shrink-0"
           >
             Get in touch
           </a>

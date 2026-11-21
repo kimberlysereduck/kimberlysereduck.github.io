@@ -4,14 +4,14 @@ A single-page portfolio built with React, TypeScript, Vite, and Tailwind CSS. It
 
 ## Requirements
 
-- Node.js supported by Vite 8
-- npm
+- Node.js 22.12 or newer supported by Vite 8
+- Bun 1.4.4 (used for dependency installation and CI)
 
 ## Getting started
 
 ```sh
-npm install
-npm run dev
+bun install --frozen-lockfile
+bun run dev
 ```
 
 Vite serves the site at <http://localhost:3000>.
@@ -20,14 +20,32 @@ Vite serves the site at <http://localhost:3000>.
 
 | Command | Description |
 | --- | --- |
-| `npm run dev` | Start the local development server |
-| `npm run build` | Create a production build in `dist/` |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run Biome's recommended lint rules and the TypeScript compiler check |
-| `npm run typecheck` | Run the TypeScript compiler check |
-| `npm test` | Run the Vitest test suite once |
-| `npm run test:watch` | Run Vitest in watch mode |
+| `bun run dev` | Start the local development server |
+| `bun run build` | Create a production build in `dist/` |
+| `bun run preview` | Preview the production build locally |
+| `bun run lint` | Run Biome's recommended lint rules and the TypeScript compiler check |
+| `bun run typecheck` | Run the TypeScript compiler check |
+| `bun run test` | Run unit and integration tests once |
+| `bun run test:watch` | Run Vitest in watch mode |
+| `bun run test:coverage` | Run Vitest with V8 coverage and enforce minimum thresholds |
+| `bun run test:e2e` | Build and test the production site with Playwright |
 | `npm run deploy` | Build and deploy directly to the `gh-pages` branch on GitHub |
+
+## Quality checks
+
+Install the browser once with `bunx playwright install chromium` (on Linux, use
+`bunx playwright install --with-deps chromium` if system dependencies are missing).
+Playwright tests the production build in desktop and mobile Chromium, using port
+4173. Vitest reports coverage for application source, excluding the entry point
+and type-only definitions, and enforces 55% minimum for statements, branches,
+functions, and lines. The LCOV report is written to `coverage/`.
+
+The GitHub Actions workflow runs lint/typecheck, unit/integration tests with
+coverage, Playwright, and a production build in parallel on pushes to `main` and
+pull requests targeting any branch. Coverage and Playwright reports are uploaded
+as workflow artifacts. Deployment occurs only after all checks pass on a push
+to `main`. Configure branch protection or rulesets in GitHub if these checks
+should be required before merging. Existing Biome warnings do not fail lint.
 
 ## GitHub Pages Deployment
 
