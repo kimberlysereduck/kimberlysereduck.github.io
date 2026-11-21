@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { PROJECTS } from '../src/data/portfolioData';
+import { PROJECTS } from '../../src/data/portfolioData';
 
 test('renders the portfolio and navigates to projects', async ({ page }) => {
   await page.goto('/');

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { EXPERIENCES, PERSONAL_INFO, PROJECTS, SKILL_CATEGORIES } from './portfolioData';
+import { EXPERIENCES, PERSONAL_INFO, PROJECTS, SKILL_CATEGORIES } from '../../src/data/portfolioData';
 
 describe('portfolio data', () => {
   it('has unique project and experience identifiers', () => {

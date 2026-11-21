@@ -1,10 +1,10 @@
 // @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import App from '../App';
-import { PROJECTS } from '../data/portfolioData';
-import { ProjectShowcase } from './ProjectShowcase';
-import { TerminalCLI } from './TerminalCLI';
+import App from '../../src/App';
+import { PROJECTS } from '../../src/data/portfolioData';
+import { ProjectShowcase } from '../../src/components/ProjectShowcase';
+import { TerminalCLI } from '../../src/components/TerminalCLI';
 
 afterEach(() => {
   cleanup();
