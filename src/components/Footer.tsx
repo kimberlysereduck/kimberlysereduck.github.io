@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="border-t border-slate-800/80 bg-[#07080d] py-12 text-slate-400">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-        
+
         {/* Brand & Copyright */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
           <span className="font-mono text-sm font-semibold text-white">
@@ -76,6 +76,7 @@ export const Footer: React.FC = () => {
           </a>
 
           <button
+            type="button"
             onClick={scrollToTop}
             className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors flex items-center gap-1 text-xs font-mono"
             title="Back to top"

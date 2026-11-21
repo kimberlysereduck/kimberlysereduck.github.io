@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 import { ArrowDown, Github, Terminal, Play, CheckCircle2, Copy, Check } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -79,7 +80,7 @@ export function castBallot(state: PollState, action: CastVoteAction): PollState 
   const handleRunSimulation = () => {
     setIsRunningTest(true);
     setTestOutput('Initializing headless Selenium & injecting axe-core ruleset...');
-    
+
     setTimeout(() => {
       setTestOutput('Evaluating 142 DOM tree landmarks against WCAG 2.1 AA criteria...');
     }, 600);
@@ -104,7 +105,7 @@ export function castBallot(state: PollState, action: CastVoteAction): PollState 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Split Screen Hero */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
-          
+
           {/* Left Column: Typographic Hierarchy */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
             {/* Clean Monospace Kicker */}
@@ -190,6 +191,7 @@ export function castBallot(state: PollState, action: CastVoteAction): PollState 
                 </div>
 
                 <button
+                  type='button'
                   onClick={handleCopyCode}
                   className="p-1 rounded text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
                   title="Copy code snippet"
@@ -202,32 +204,32 @@ export function castBallot(state: PollState, action: CastVoteAction): PollState 
               {/* Tabs */}
               <div className="flex items-center bg-[#090b12] border-b border-slate-800/60 px-2 pt-2 gap-1 overflow-x-auto">
                 <button
+                  type='button'
                   onClick={() => setActiveTab('a11y')}
-                  className={`px-3 py-1.5 text-xs font-mono rounded-t-md transition-colors whitespace-nowrap ${
-                    activeTab === 'a11y'
-                      ? 'bg-[#0c0f17] text-white border-t border-x border-slate-700/80'
-                      : 'text-slate-400 hover:text-slate-200'
-                  }`}
+                  className={`px-3 py-1.5 text-xs font-mono rounded-t-md transition-colors whitespace-nowrap ${activeTab === 'a11y'
+                    ? 'bg-[#0c0f17] text-white border-t border-x border-slate-700/80'
+                    : 'text-slate-400 hover:text-slate-200'
+                    }`}
                 >
                   pytest_axe.py
                 </button>
                 <button
+                  type='button'
                   onClick={() => setActiveTab('perf')}
-                  className={`px-3 py-1.5 text-xs font-mono rounded-t-md transition-colors whitespace-nowrap ${
-                    activeTab === 'perf'
-                      ? 'bg-[#0c0f17] text-white border-t border-x border-slate-700/80'
-                      : 'text-slate-400 hover:text-slate-200'
-                  }`}
+                  className={`px-3 py-1.5 text-xs font-mono rounded-t-md transition-colors whitespace-nowrap ${activeTab === 'perf'
+                    ? 'bg-[#0c0f17] text-white border-t border-x border-slate-700/80'
+                    : 'text-slate-400 hover:text-slate-200'
+                    }`}
                 >
                   perf_telemetry.js
                 </button>
                 <button
+                  type='button'
                   onClick={() => setActiveTab('fullstack')}
-                  className={`px-3 py-1.5 text-xs font-mono rounded-t-md transition-colors whitespace-nowrap ${
-                    activeTab === 'fullstack'
-                      ? 'bg-[#0c0f17] text-white border-t border-x border-slate-700/80'
-                      : 'text-slate-400 hover:text-slate-200'
-                  }`}
+                  className={`px-3 py-1.5 text-xs font-mono rounded-t-md transition-colors whitespace-nowrap ${activeTab === 'fullstack'
+                    ? 'bg-[#0c0f17] text-white border-t border-x border-slate-700/80'
+                    : 'text-slate-400 hover:text-slate-200'
+                    }`}
                 >
                   poll_voting.ts
                 </button>
@@ -248,6 +250,7 @@ export function castBallot(state: PollState, action: CastVoteAction): PollState 
                     <span>Automated WCAG 2.1 AA audit pass</span>
                   </div>
                   <button
+                    type='button'
                     onClick={handleRunSimulation}
                     disabled={isRunningTest}
                     className="px-3 py-1 text-xs font-mono rounded-md bg-slate-800 hover:bg-slate-700 text-white flex items-center gap-1.5 transition-colors disabled:opacity-50"

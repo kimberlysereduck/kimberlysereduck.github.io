@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, Github, ExternalLink, Copy, Check } from 'lucide-react';
-import { Project } from '../types';
+import type { Project } from '../types';
 import { ArchitectureDiagram } from './ArchitectureDiagram';
 
 interface ProjectModalProps {
@@ -46,7 +46,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* Modal Card */}
-      <div 
+      <div
         className="relative z-10 w-full max-w-4xl max-h-[90vh] bg-[#0c0f17] border border-slate-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden text-slate-200"
         onClick={(e) => e.stopPropagation()}
       >

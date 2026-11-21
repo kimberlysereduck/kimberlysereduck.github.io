@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 interface ArchitectureDiagramProps {
   type: 'stream' | 'mesh' | 'compiler' | 'cache' | 'container' | 'socket';
@@ -14,7 +14,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
   return (
     <div className={`relative w-full h-48 rounded-xl overflow-hidden bg-[#0c0f17] dark:bg-[#080a10] border border-slate-800/80 flex items-center justify-center p-4 select-none ${className}`}>
       {/* Background subtle grid pattern */}
-      <div 
+      <div
         className="absolute inset-0 opacity-15 pointer-events-none"
         style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.35) 1px, transparent 0)`,
@@ -26,7 +26,8 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
       <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gradient-to-br from-pink-500/10 via-amber-500/10 to-cyan-500/10 blur-2xl pointer-events-none" />
 
       {type === 'stream' && (
-        <svg viewBox="0 0 360 140" className="w-full h-full max-w-sm text-slate-300">
+        <svg viewBox="0 0 360 140" className="arch-diag-stream w-full h-full max-w-sm text-slate-300">
+          <title>Stream Architecture Diagram</title>
           <defs>
             <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#ec4899" />
@@ -39,7 +40,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
           <text x="45" y="43" textAnchor="middle" fill="#94a3b8" fontSize="10" fontFamily="JetBrains Mono">SELENIUM</text>
           <rect x="15" y="65" width="60" height="28" rx="6" fill="#131826" stroke="#334155" strokeWidth="1" />
           <text x="45" y="83" textAnchor="middle" fill="#94a3b8" fontSize="10" fontFamily="JetBrains Mono">PYTEST</text>
-          
+
           {/* Connector paths */}
           <path d="M 75 39 C 105 39, 105 59, 125 59" stroke="url(#streamGrad)" strokeWidth="2" strokeDasharray="3 3" fill="none" />
           <path d="M 75 79 C 105 79, 105 59, 125 59" stroke="url(#streamGrad)" strokeWidth="2" strokeDasharray="3 3" fill="none" />
@@ -59,7 +60,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
           <text x="310" y="43" textAnchor="middle" fill="#94a3b8" fontSize="10" fontFamily="JetBrains Mono">CI REPORT</text>
           <rect x="275" y="65" width="70" height="28" rx="6" fill="#131826" stroke="#334155" strokeWidth="1" />
           <text x="310" y="83" textAnchor="middle" fill="#94a3b8" fontSize="10" fontFamily="JetBrains Mono">A11Y LOGS</text>
-          
+
           {/* Signal Indicator */}
           <circle cx="105" cy="59" r="3" fill="#f43f5e" />
           <circle cx="255" cy="59" r="3" fill="#38bdf8" />
@@ -67,7 +68,8 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
       )}
 
       {type === 'mesh' && (
-        <svg viewBox="0 0 360 140" className="w-full h-full max-w-sm">
+        <svg viewBox="0 0 360 140" className="arch-diag-mesh w-full h-full max-w-sm">
+          <title>Mesh Architecture Diagram</title>
           <defs>
             <linearGradient id="meshGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#a855f7" />
@@ -86,7 +88,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
           {/* Active Probes */}
           <circle cx="60" cy="40" r="18" fill="#131826" stroke="#38bdf8" strokeWidth="1.5" />
           <text x="60" y="44" textAnchor="middle" fill="#e2e8f0" fontSize="9" fontFamily="JetBrains Mono">API-01</text>
-          
+
           <circle cx="180" cy="30" r="22" fill="#161b2a" stroke="#a855f7" strokeWidth="1.5" />
           <text x="180" y="34" textAnchor="middle" fill="#e2e8f0" fontSize="9" fontFamily="JetBrains Mono">AUTH</text>
 
@@ -106,7 +108,8 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
       )}
 
       {type === 'compiler' && (
-        <svg viewBox="0 0 360 140" className="w-full h-full max-w-sm">
+        <svg viewBox="0 0 360 140" className="arch-diag-compiler w-full h-full max-w-sm">
+          <title>Compiler Architecture Diagram</title>
           <defs>
             <linearGradient id="compGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#f43f5e" />
@@ -124,7 +127,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
 
           {/* Transform Pipeline */}
           <path d="M 105 60 L 140 60" stroke="url(#compGrad)" strokeWidth="2" />
-          
+
           <rect x="140" y="20" width="100" height="80" rx="8" fill="#161b2a" stroke="#38bdf8" strokeWidth="1.2" />
           <text x="190" y="42" textAnchor="middle" fill="#f8fafc" fontSize="10" fontWeight="600" fontFamily="JetBrains Mono">PRISM COMPILER</text>
           <text x="190" y="58" textAnchor="middle" fill="#38bdf8" fontSize="8" fontFamily="JetBrains Mono">AST Flattening</text>
@@ -143,7 +146,8 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
       )}
 
       {type === 'cache' && (
-        <svg viewBox="0 0 360 140" className="w-full h-full max-w-sm">
+        <svg viewBox="0 0 360 140" className="arch-diag-cache w-full h-full max-w-sm">
+          <title>Cache Architecture Diagram</title>
           <rect x="30" y="25" width="80" height="75" rx="6" fill="#131826" stroke="#334155" strokeWidth="1" />
           <text x="70" y="45" textAnchor="middle" fill="#38bdf8" fontSize="10" fontFamily="JetBrains Mono">Region US-E</text>
           <rect x="42" y="55" width="56" height="18" rx="4" fill="#0f172a" stroke="#475569" strokeWidth="0.8" />
@@ -151,7 +155,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
           <text x="70" y="88" textAnchor="middle" fill="#34d399" fontSize="8" fontFamily="JetBrains Mono">0.45ms</text>
 
           <path d="M 110 62 L 155 62" stroke="#a855f7" strokeWidth="2" strokeDasharray="3 3" />
-          
+
           <rect x="155" y="20" width="90" height="85" rx="8" fill="#161b2a" stroke="#a855f7" strokeWidth="1.2" />
           <text x="200" y="42" textAnchor="middle" fill="#f8fafc" fontSize="10" fontWeight="600" fontFamily="JetBrains Mono">AETHER KV</text>
           <text x="200" y="60" textAnchor="middle" fill="#fb923c" fontSize="8" fontFamily="JetBrains Mono">HLC Clock Sync</text>
@@ -169,7 +173,8 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
       )}
 
       {type === 'container' && (
-        <svg viewBox="0 0 360 140" className="w-full h-full max-w-sm">
+        <svg viewBox="0 0 360 140" className="arch-diag-container w-full h-full max-w-sm">
+          <title>Container Architecture Diagram</title>
           <rect x="30" y="30" width="85" height="65" rx="6" fill="#131826" stroke="#334155" strokeWidth="1" />
           <text x="72" y="50" textAnchor="middle" fill="#f43f5e" fontSize="9" fontFamily="JetBrains Mono">Base Snapshot</text>
           <text x="72" y="66" textAnchor="middle" fill="#64748b" fontSize="8" fontFamily="JetBrains Mono">Read-Only Tree</text>
@@ -193,10 +198,11 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type, 
       )}
 
       {type === 'socket' && (
-        <svg viewBox="0 0 360 140" className="w-full h-full max-w-sm">
+        <svg viewBox="0 0 360 140" className="arch-diag-socket w-full h-full max-w-sm">
+          <title>Socket Architecture Diagram</title>
           <circle cx="50" cy="40" r="14" fill="#131826" stroke="#ec4899" strokeWidth="1" />
           <text x="50" y="43" textAnchor="middle" fill="#f43f5e" fontSize="7" fontFamily="JetBrains Mono">WS 1</text>
-          
+
           <circle cx="50" cy="70" r="14" fill="#131826" stroke="#f59e0b" strokeWidth="1" />
           <text x="50" y="73" textAnchor="middle" fill="#fb923c" fontSize="7" fontFamily="JetBrains Mono">WS 2</text>
 

@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+import type React from 'react'
+import { useState, useRef, useEffect } from 'react';
 import { Terminal, Send, Trash2, HelpCircle } from 'lucide-react';
 import { PERSONAL_INFO, PROJECTS, SKILL_CATEGORIES } from '../data/portfolioData';
 
@@ -52,12 +53,6 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleTheme, isDarkM
 
   const terminalEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (logs.length > 0) {
-      terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [logs]);
 
   const executeCommand = (rawCmd: string) => {
     const trimmed = rawCmd.trim();
@@ -292,7 +287,7 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleTheme, isDarkM
   return (
     <section id="terminal" className="py-20 border-t border-slate-800/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        
+
         {/* Section Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 mb-2">
@@ -309,7 +304,7 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleTheme, isDarkM
 
         {/* Terminal Container */}
         <div className="rounded-2xl bg-[#090b10] border border-slate-800/90 shadow-2xl overflow-hidden rainbow-gradient-border">
-          
+
           {/* Terminal Window Bar */}
           <div className="px-4 py-3 bg-[#0c0f17] border-b border-slate-800 flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -323,6 +318,7 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleTheme, isDarkM
 
             <div className="flex items-center gap-2">
               <button
+                type='button'
                 onClick={() => setLogs([])}
                 className="p-1 rounded text-slate-400 hover:text-rose-400 transition-colors"
                 title="Clear screen"
@@ -340,6 +336,7 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleTheme, isDarkM
             </span>
             {quickCommands.map((cmd) => (
               <button
+                type='button'
                 key={cmd}
                 onClick={() => executeCommand(cmd)}
                 className="px-2 py-0.5 rounded bg-slate-800/60 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors shrink-0 text-[11px]"
@@ -350,9 +347,9 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleTheme, isDarkM
           </div>
 
           {/* Terminal Body */}
-          <div 
+          <div
             className="p-4 sm:p-5 font-mono text-xs text-slate-300 min-h-[320px] max-h-[460px] overflow-y-auto space-y-4"
-            onClick={() => inputRef.current?.focus()}
+          // onClick={() => inputRef.current?.focus()} onKeyDown={() => inputRef.current?.focus()}
           >
             {logs.map((log) => (
               <div key={log.id} className="space-y-1.5">
@@ -382,6 +379,7 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleTheme, isDarkM
                 spellCheck="false"
               />
               <button
+                type='button'
                 onClick={() => executeCommand(input)}
                 className="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors"
                 title="Send command"
@@ -390,7 +388,7 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleTheme, isDarkM
                 <Send className="w-3.5 h-3.5" />
               </button>
             </div>
-            
+
             <div ref={terminalEndRef} />
           </div>
         </div>

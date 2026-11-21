@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
 
 /**
@@ -12,7 +13,7 @@ export const TechnicalStack: React.FC = () => {
   return (
     <section id="stack" className="py-20 border-t border-slate-800/80">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        
+
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-2 font-mono text-xs text-slate-400 mb-2">
@@ -31,13 +32,13 @@ export const TechnicalStack: React.FC = () => {
         <div className="flex flex-wrap items-center gap-2 p-1.5 bg-[#0c0f17] border border-slate-800 rounded-xl mb-8">
           {SKILL_CATEGORIES.map((cat, idx) => (
             <button
+              type='button'
               key={cat.category}
               onClick={() => setSelectedCategory(idx)}
-              className={`px-3.5 py-2 text-xs font-mono rounded-lg transition-all whitespace-nowrap ${
-                selectedCategory === idx
-                  ? 'bg-slate-800 text-white border border-slate-700/80 shadow-sm'
-                  : 'text-slate-400 hover:text-slate-200'
-              }`}
+              className={`px-3.5 py-2 text-xs font-mono rounded-lg transition-all whitespace-nowrap ${selectedCategory === idx
+                ? 'bg-slate-800 text-white border border-slate-700/80 shadow-sm'
+                : 'text-slate-400 hover:text-slate-200'
+                }`}
             >
               {cat.category}
             </button>

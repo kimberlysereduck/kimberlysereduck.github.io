@@ -106,7 +106,7 @@ Location: Carlsbad, NM
   return (
     <section id="contact" className="py-20 border-t border-slate-800/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 font-mono text-xs text-pink-400 mb-2">
@@ -122,10 +122,10 @@ Location: Carlsbad, NM
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
+
           {/* Left Column: Direct Profile Links & Resume */}
           <div className="lg:col-span-5 space-y-4">
-            
+
             <div className="rounded-2xl bg-[#0c0f17] border border-slate-800/80 p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-base font-bold text-white font-mono">
@@ -249,7 +249,7 @@ Location: Carlsbad, NM
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
             <div className="rounded-2xl bg-[#0c0f17] border border-slate-800/90 p-6 sm:p-8 shadow-2xl rainbow-gradient-border">
-              
+
               {isSubmitted ? (
                 <div className="py-12 text-center space-y-4">
                   <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400">
@@ -274,10 +274,10 @@ Location: Carlsbad, NM
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Name */}
                     <div className="space-y-1.5">
-                      <label className="block text-xs font-mono text-slate-300">
+                      <label htmlFor="name" className="block text-xs font-mono text-slate-300">
                         Your Name <span className="text-pink-500">*</span>
                       </label>
-                      <input
+                      <input id="name"
                         type="text"
                         required
                         value={formData.name}
@@ -289,10 +289,10 @@ Location: Carlsbad, NM
 
                     {/* Email */}
                     <div className="space-y-1.5">
-                      <label className="block text-xs font-mono text-slate-300">
+                      <label htmlFor="email" className="block text-xs font-mono text-slate-300">
                         Email Address <span className="text-pink-500">*</span>
                       </label>
-                      <input
+                      <input id="email"
                         type="email"
                         required
                         value={formData.email}
@@ -305,10 +305,10 @@ Location: Carlsbad, NM
 
                   {/* Inquiry Type */}
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-mono text-slate-300">
+                    <label htmlFor="inquiryType" className="block text-xs font-mono text-slate-300">
                       Inquiry Category
                     </label>
-                    <select
+                    <select id="inquiryType"
                       value={formData.inquiryType}
                       onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-lg bg-[#090b10] border border-slate-800 text-xs font-mono text-white focus:outline-none focus:border-cyan-400 transition-colors"
@@ -323,10 +323,10 @@ Location: Carlsbad, NM
 
                   {/* Subject */}
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-mono text-slate-300">
+                    <label htmlFor="subject" className="block text-xs font-mono text-slate-300">
                       Subject
                     </label>
-                    <input
+                    <input id="subject"
                       type="text"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -337,10 +337,10 @@ Location: Carlsbad, NM
 
                   {/* Message */}
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-mono text-slate-300">
+                    <label htmlFor="message" className="block text-xs font-mono text-slate-300">
                       Message <span className="text-pink-500">*</span>
                     </label>
-                    <textarea
+                    <textarea id="message"
                       required
                       rows={5}
                       value={formData.message}

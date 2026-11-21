@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 import { Sun, Moon, Github, Menu, X } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -28,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-8">
         {/* Zone 1: Brand Wordmark (Single text element in display/mono face) */}
         <a
-          href="#"
+          href="/"
           className="font-mono text-xs sm:text-base font-semibold tracking-tight text-slate-100 hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5"
           aria-label="Kimberly Sereduck Portfolio Home"
         >
@@ -54,6 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
         <div className="flex items-center gap-1 sm:gap-3 shrink-0">
           {/* Dark / Light Mode Toggle */}
           <button
+            type='button'
             onClick={onToggleTheme}
             className="p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
             aria-label={isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'}
@@ -101,6 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
           {/* Mobile hamburger button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            type="button"
             className="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none"
             aria-label="Toggle navigation menu"
           >
