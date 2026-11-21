@@ -1,5 +1,5 @@
 import type React from 'react'
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { Terminal, Send, Trash2, HelpCircle } from 'lucide-react';
 import { PERSONAL_INFO, PROJECTS, SKILL_CATEGORIES } from '../data/portfolioData';
 

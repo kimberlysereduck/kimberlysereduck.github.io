@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Github, ArrowUpRight, Code2 } from 'lucide-react';
-import { Project, ProjectCategory } from '../types';
+import type { Project, ProjectCategory } from '../types';
 import { PROJECTS } from '../data/portfolioData';
 import { ArchitectureDiagram } from './ArchitectureDiagram';
 import { ProjectModal } from './ProjectModal';
@@ -29,7 +29,7 @@ export const ProjectShowcase: React.FC = () => {
   return (
     <section id="projects" className="py-20 border-t border-slate-800/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
@@ -49,13 +49,13 @@ export const ProjectShowcase: React.FC = () => {
           <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#0c0f17] border border-slate-800 rounded-xl">
             {categories.map((cat) => (
               <button
+                type='button'
                 key={cat.value}
                 onClick={() => setActiveCategory(cat.value)}
-                className={`px-3 py-1.5 text-xs font-mono rounded-lg transition-all whitespace-nowrap ${
-                  activeCategory === cat.value
-                    ? 'bg-slate-800 text-white shadow-sm border border-slate-700/80'
-                    : 'text-slate-400 hover:text-slate-200'
-                }`}
+                className={`px-3 py-1.5 text-xs font-mono rounded-lg transition-all whitespace-nowrap ${activeCategory === cat.value
+                  ? 'bg-slate-800 text-white shadow-sm border border-slate-700/80'
+                  : 'text-slate-400 hover:text-slate-200'
+                  }`}
               >
                 {cat.label}
               </button>
@@ -125,6 +125,7 @@ export const ProjectShowcase: React.FC = () => {
                 {/* Action Buttons */}
                 <div className="pt-2 flex items-center justify-between gap-2">
                   <button
+                    type='button'
                     onClick={() => setSelectedProject(project)}
                     className="flex-1 px-3 py-1.5 text-xs font-mono rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white flex items-center justify-center gap-1.5 transition-colors border border-slate-700/60"
                   >

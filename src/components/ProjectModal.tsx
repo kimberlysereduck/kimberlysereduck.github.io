@@ -43,12 +43,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm animate-fadeIn">
       {/* Modal Backdrop click to close */}
-      <div className="absolute inset-0" onClick={onClose} />
+      <div className="absolute inset-0" />
 
       {/* Modal Card */}
       <div
         className="relative z-10 w-full max-w-4xl max-h-[90vh] bg-[#0c0f17] border border-slate-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden text-slate-200"
-        onClick={(e) => e.stopPropagation()}
+      // onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
         <div className="p-6 border-b border-slate-800/90 flex items-start justify-between gap-4 bg-[#090b10]">
@@ -73,6 +73,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           <button
+            type='button'
             onClick={onClose}
             className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors shrink-0"
             aria-label="Close modal"
@@ -172,6 +173,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   {project.codeSnippet.filename} ({project.codeSnippet.language})
                 </span>
                 <button
+                  type='button'
                   onClick={handleCopyCode}
                   className="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center gap-1.5 transition-colors"
                 >
